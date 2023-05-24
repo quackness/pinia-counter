@@ -1,10 +1,12 @@
 <script setup>
 import { useCounterStore } from "@/stores/counter";
-import { useAuthStore } from "@/stores/auth";
-// const authStore = useAuthStore();
-// const store = useCounterStore();
-// console.log("store", store.count);
-// console.log("authStore", authStore.isAuthenticated);
+import Counter from "@/components/Counter.vue";
+const store = useCounterStore();
 </script>
 
-<template>Home</template>
+<template>
+  <main>
+    Home {{ store.count }}
+    <Counter :count="store.count" />
+  </main>
+</template>
