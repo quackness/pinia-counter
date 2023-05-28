@@ -1,15 +1,18 @@
 <template>
   <div>
-    <p>Count Value: {{ count }}</p>
+    <br />
+    <button @click="increment">+</button>
+    Count Value: {{ store.count }}
+    <button @click="decrement">-</button>
   </div>
 </template>
 <script setup>
-// export default {
-//   props: ["count"],
-//   setup(props) {
-//     console.log("props count", props.count);
-//   },
-// };
-const props = defineProps(["count"]);
-const count = props.count;
+import { useCounterStore } from "@/stores/counter";
+const store = useCounterStore();
+function increment() {
+  store.count++;
+}
+function decrement() {
+  store.count--;
+}
 </script>

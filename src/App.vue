@@ -1,6 +1,6 @@
 <script setup>
 import HelloWorld from "./components/HelloWorld.vue";
-import TheWelcome from "./components/TheWelcome.vue";
+import TheWelcome from "./components/HomeView.vue";
 
 import { useAuthStore } from "@/stores/auth";
 const authStore = useAuthStore();
