@@ -6,7 +6,7 @@ import HomeView from "./components/HomeView.vue";
 import { useAuthStore } from "@/stores/auth";
 const authStore = useAuthStore();
 function logout() {
-  authStore.isAuthenticated = false;
+  authStore.$state = { isAuthenticated: false };
 }
 </script>
 
