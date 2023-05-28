@@ -10,6 +10,8 @@ function logout() {
     (state.isAuthenticated = false), (state.user = {});
   });
 }
+
+//use $state with a single item, and $patch with nested
 </script>
 
 <template>
