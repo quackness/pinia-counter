@@ -5,6 +5,6 @@ export const useCounterStore = defineStore('counter', {
     count: 10,
   }),
   getters: {
-    countDigitLength: (store) => store.count.toString().length,
+    countDigitLength: (state) => state.count.toString().length,
   }
 });

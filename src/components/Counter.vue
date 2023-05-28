@@ -18,8 +18,4 @@ function increment() {
 function decrement() {
   store.count--;
 }
-
-// const countDigitLength = computed(() => store.count.toString().length);
-
-// const countDigiLength = store.count.toString().length;
 </script>
