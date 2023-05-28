@@ -5,13 +5,16 @@ import HomeView from "./components/HomeView.vue";
 
 import { useAuthStore } from "@/stores/auth";
 const authStore = useAuthStore();
+function logout() {
+  authStore.isAuthenticated = false;
+}
 </script>
 
 <template>
   <header></header>
 
   <main>
-    <button>Log out</button>
+    <button @click="logout">Log out</button>
     <HomeView />
   </main>
 </template>
