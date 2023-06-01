@@ -11,13 +11,7 @@ function logout() {
   });
 }
 function login() {
-  authStore.$patch((state) => {
-    (state.isAuthenticated = true),
-      (state.user = {
-        name: "Karolina",
-        email: "test@gmail.com",
-      });
-  });
+  authStore.$reset();
 }
 
 //use $state with a single item, and $patch with nested
