@@ -5,24 +5,16 @@ import HomeView from "./components/HomeView.vue";
 
 import { useAuthStore } from "@/stores/auth";
 const authStore = useAuthStore();
-function logout() {
-  authStore.$patch((state) => {
-    (state.isAuthenticated = false), (state.user = {});
-  });
-}
-function login() {
-  authStore.$reset();
-}
-
-//use $state with a single item, and $patch with nested
 </script>
 
 <template>
   <header></header>
 
   <main>
-    <button @click="logout" v-if="authStore.isAuthenticated">Log out</button>
-    <button @click="login" v-else>Login</button>
+    <button @click="authStore.logout" v-if="authStore.isAuthenticated">
+      Log out
+    </button>
+    <button @click="authStore.login" v-else>Login</button>
     <HomeView />
   </main>
 </template>
