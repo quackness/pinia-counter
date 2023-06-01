@@ -14,8 +14,12 @@ export const useAuthStore = defineStore('auth', {
         (state.isAuthenticated = false), (state.user = {});
       });
     },
-    login() {
-      this.$reset();
+    async login() {
+      const res = await fetch("https://reqres.in/api/users/2")
+      const { data } = await res.json()
+      // console.log(data)
+      this.user = data;
+      this.isAuthenticated = true;
     }
     //use $state with a single item, and $patch with nested
   }
