@@ -10,6 +10,15 @@ function logout() {
     (state.isAuthenticated = false), (state.user = {});
   });
 }
+function login() {
+  authStore.$patch((state) => {
+    (state.isAuthenticated = true),
+      (state.user = {
+        name: "Karolina",
+        email: "test@gmail.com",
+      });
+  });
+}
 
 //use $state with a single item, and $patch with nested
 </script>
@@ -18,7 +27,8 @@ function logout() {
   <header></header>
 
   <main>
-    <button @click="logout">Log out</button>
+    <button @click="logout" v-if="authStore.isAuthenticated">Log out</button>
+    <button @click="login" v-else>Login</button>
     <HomeView />
   </main>
 </template>
